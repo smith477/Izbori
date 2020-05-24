@@ -34,14 +34,14 @@
             this.cmdDodavanjeGlasackogMesta = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.cmdOneToMany = new System.Windows.Forms.Button();
-            this.cmdPrimedba = new System.Windows.Forms.Button();
+            this.cmdPrimedbe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
             // 
             this.cmdUcitavanjeIzbora.Location = new System.Drawing.Point(12, 12);
             this.cmdUcitavanjeIzbora.Name = "cmdUcitavanjeIzbora";
-            this.cmdUcitavanjeIzbora.Size = new System.Drawing.Size(244, 23);
+            this.cmdUcitavanjeIzbora.Size = new System.Drawing.Size(268, 23);
             this.cmdUcitavanjeIzbora.TabIndex = 0;
             this.cmdUcitavanjeIzbora.Text = "Ucitavanje aktiviste";
             this.cmdUcitavanjeIzbora.UseVisualStyleBackColor = true;
@@ -51,7 +51,7 @@
             // 
             this.cmdDodavanjeAktiviste.Location = new System.Drawing.Point(12, 41);
             this.cmdDodavanjeAktiviste.Name = "cmdDodavanjeAktiviste";
-            this.cmdDodavanjeAktiviste.Size = new System.Drawing.Size(244, 23);
+            this.cmdDodavanjeAktiviste.Size = new System.Drawing.Size(268, 23);
             this.cmdDodavanjeAktiviste.TabIndex = 1;
             this.cmdDodavanjeAktiviste.Text = "Dodavanje novog aktiviste";
             this.cmdDodavanjeAktiviste.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
             // 
             this.cmdManyToOne.Location = new System.Drawing.Point(12, 70);
             this.cmdManyToOne.Name = "cmdManyToOne";
-            this.cmdManyToOne.Size = new System.Drawing.Size(244, 26);
+            this.cmdManyToOne.Size = new System.Drawing.Size(268, 26);
             this.cmdManyToOne.TabIndex = 2;
             this.cmdManyToOne.Text = "Aktivista i Glasacko mesto";
             this.cmdManyToOne.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             // 
             this.cmdDodavanjeGlasackogMesta.Location = new System.Drawing.Point(12, 102);
             this.cmdDodavanjeGlasackogMesta.Name = "cmdDodavanjeGlasackogMesta";
-            this.cmdDodavanjeGlasackogMesta.Size = new System.Drawing.Size(244, 23);
+            this.cmdDodavanjeGlasackogMesta.Size = new System.Drawing.Size(268, 23);
             this.cmdDodavanjeGlasackogMesta.TabIndex = 3;
             this.cmdDodavanjeGlasackogMesta.Text = "Dodavanje novog glasackog mesta";
             this.cmdDodavanjeGlasackogMesta.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(12, 131);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 23);
+            this.button1.Size = new System.Drawing.Size(268, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Glasacko mesto i primedbe";
             this.button1.UseVisualStyleBackColor = true;
@@ -91,28 +91,28 @@
             // 
             this.cmdOneToMany.Location = new System.Drawing.Point(12, 160);
             this.cmdOneToMany.Name = "cmdOneToMany";
-            this.cmdOneToMany.Size = new System.Drawing.Size(244, 23);
+            this.cmdOneToMany.Size = new System.Drawing.Size(268, 23);
             this.cmdOneToMany.TabIndex = 5;
-            this.cmdOneToMany.Text = "Veza OneToMany";
+            this.cmdOneToMany.Text = "Veza OneToMany Vrati Aktiviste Za GM";
             this.cmdOneToMany.UseVisualStyleBackColor = true;
             this.cmdOneToMany.Click += new System.EventHandler(this.cmdOneToMany_Click);
             // 
-            // cmdPrimedba
+            // cmdPrimedbe
             // 
-            this.cmdPrimedba.Location = new System.Drawing.Point(12, 189);
-            this.cmdPrimedba.Name = "cmdPrimedba";
-            this.cmdPrimedba.Size = new System.Drawing.Size(244, 23);
-            this.cmdPrimedba.TabIndex = 6;
-            this.cmdPrimedba.Text = "Primedba";
-            this.cmdPrimedba.UseVisualStyleBackColor = true;
-            this.cmdPrimedba.Click += new System.EventHandler(this.cmdPrimedba_Click);
+            this.cmdPrimedbe.Location = new System.Drawing.Point(12, 189);
+            this.cmdPrimedbe.Name = "cmdPrimedbe";
+            this.cmdPrimedbe.Size = new System.Drawing.Size(268, 23);
+            this.cmdPrimedbe.TabIndex = 6;
+            this.cmdPrimedbe.Text = "Glasacka Mesta I Primedbe";
+            this.cmdPrimedbe.UseVisualStyleBackColor = true;
+            this.cmdPrimedbe.Click += new System.EventHandler(this.cmdPrimedbe_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmdPrimedba);
+            this.Controls.Add(this.cmdPrimedbe);
             this.Controls.Add(this.cmdOneToMany);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmdDodavanjeGlasackogMesta);
@@ -133,7 +133,7 @@
         private System.Windows.Forms.Button cmdDodavanjeGlasackogMesta;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button cmdOneToMany;
-        private System.Windows.Forms.Button cmdPrimedba;
+        private System.Windows.Forms.Button cmdPrimedbe;
     }
 }
 

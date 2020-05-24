@@ -1,9 +1,18 @@
-﻿namespace Izbori.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Izbori.Entities
 {
     public class Primedbe
     {
-        public virtual PrimedbaId Id { get; set; }
-        //public virtual string Primedba { get; set; }
-        //public virtual Glasacka_Mesta Glasacko_Mesto { get; set; }
+        public virtual PrimedbeId Id { get; set; }
+
+        public Primedbe()
+        {
+            Id = new PrimedbeId();
+        }
     }
 }

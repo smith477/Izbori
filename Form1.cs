@@ -99,15 +99,31 @@ namespace Izbori
 
                 //aktivista = session.Load<Aktivista_Stranke>(41); //Za azuriranje, na dole isti kod
 
-                glasacko_mesto.Naziv = "TRG KRALJA MILANA";
+                glasacko_mesto.Naziv = "TRG";
                 glasacko_mesto.Broj_biraca = 55;
                 glasacko_mesto.Broj_mesta = 100;
 
+                Aktivista_Stranke aktivista = new Aktivista_Stranke()
+                {
+                    Licno_ime = "Nikola",
+                    Ime_roditelja = "Dragan",
+                    Prezime = "Kovacevic",
+                    Datum_rodjenja = Convert.ToDateTime("08-JAN-1998"),
+                    Ulica = "BK",
+                    Broj = "23"
+
+                };
+
+                glasacko_mesto.Aktivisti.Add(aktivista);
+                aktivista.PratiGlasackoMesto = glasacko_mesto;
+
 
                 session.Save(glasacko_mesto);
-                //session.SaveOrUpdate(aktivista);
-
                 session.Flush();
+
+                session.Save(aktivista);
+                session.Flush();
+
                 session.Close();
             }
             catch (Exception ex)
@@ -169,18 +185,45 @@ namespace Izbori
             {
                 ISession session = DataLayer.GetSession();
 
-                Primedbe gm = session.Load<Primedbe>(20);
+                
 
                 //foreach (Aktivista_Stranke a in gm.Aktivisti)
                 //{
                 //    MessageBox.Show(a.Licno_ime + " " + a.Prezime);
                 //}
 
-                MessageBox.Show(gm.Id.ToString());
+                
 
                 session.Close();
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdPrimedbe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Glasacka_Mesta gm = session.Load<Glasacka_Mesta>(20);
+                foreach(Primedbe p in gm.Primedbe)
+                {
+                    MessageBox.Show(p.Id.Primedbe);
+                }
+                //string pr = "Jao mene";
+
+                //Primedbe primedba = new Primedbe();
+                //primedba.Id.Glasacka_Mesta = gm;
+                //primedba.Id.Primedbe = pr;
+
+                //session.Save(primedba);
+                //session.Flush();
+                //session.Close();
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

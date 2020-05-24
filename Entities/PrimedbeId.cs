@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace Izbori.Entities
 {
-    public class PrimedbaId
+    public class PrimedbeId
     {
-        public virtual string Primedba { get; set; }
-        public virtual Glasacka_Mesta Glasacko_Mesto { get; set; }
+        public virtual Glasacka_Mesta Glasacka_Mesta { get; set; }
+        public virtual string Primedbe { get; set; }
+
         public override bool Equals(object obj)
         {
             if (Object.ReferenceEquals(this, obj))
                 return true;
 
-            if (obj.GetType() != typeof(PrimedbaId))
+            if (obj.GetType() != typeof(PrimedbeId))
                 return false;
 
-            PrimedbaId recievedObject = (PrimedbaId)obj;
+            PrimedbeId recievedObject = (PrimedbeId)obj;
 
-            if ((Primedba == recievedObject.Primedba) &&
-                (Glasacko_Mesto.Id == recievedObject.Glasacko_Mesto.Id))
+            if ((Glasacka_Mesta.Id == recievedObject.Glasacka_Mesta.Id) &&
+                (Primedbe == recievedObject.Primedbe))
             {
                 return true;
             }

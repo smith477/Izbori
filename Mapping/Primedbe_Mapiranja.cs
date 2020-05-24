@@ -1,10 +1,8 @@
-﻿using FluentNHibernate.Conventions.Helpers;
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 using Izbori.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,14 +14,10 @@ namespace Izbori.Mapping
         {
             Table("PRIMEDBE");
 
-            CompositeId(x => x.Id).KeyReference(x => x.Primedba).KeyReference(x => x.Glasacko_Mesto);
-
-            
-
+            CompositeId(x => x.Id)
+                .KeyReference(x => x.Glasacka_Mesta, "ID_GLASACKOG_MESTA")
+                .KeyProperty(x => x.Primedbe, "PRIMEDBA");
 
         }
-        
-
-
     }
 }

@@ -13,14 +13,15 @@ namespace Izbori.Entities
         public virtual int Broj_biraca { get; set; }
         public virtual int Broj_mesta { get; set; }
         public virtual IList<Aktivista_Stranke> Aktivisti { get; set; }
-       // public virtual IList<Rezultati> Rezultati { get; set; }
         public virtual IList<Primedbe> Primedbe { get; set; }
+       
 
         public Glasacka_Mesta()
         {
             Aktivisti = new List<Aktivista_Stranke>();
-            //Rezultati = new List<Rezultati>();
+
             Primedbe = new List<Primedbe>();
+            
         }
 
     }

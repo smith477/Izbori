@@ -74,8 +74,8 @@
     <Compile Include="DataLayer.cs" />
     <Compile Include="Entities\Aktivista_Stranke.cs" />
     <Compile Include="Entities\Glasacka_Mesta.cs" />
-    <Compile Include="Entities\PrimedbaId.cs" />
     <Compile Include="Entities\Primedbe.cs" />
+    <Compile Include="Entities\PrimedbeId.cs" />
     <Compile Include="Entities\Rezultati.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
