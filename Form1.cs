@@ -126,14 +126,58 @@ namespace Izbori
                 Glasacka_Mesta mesto = session.Load<Glasacka_Mesta>(20);
 
                 MessageBox.Show(mesto.Naziv);
-                foreach (Primedbe pr in mesto.Primedbe)
-                {
-                    MessageBox.Show(pr.Primedba);
-                }
+                //foreach (Primedbe pr in mesto.Primedbe)
+                //{
+                //    MessageBox.Show(pr.Primedba);
+                //}
                 //Glasacka_Mesta mesto = aktivista.PratiGlasackoMesto;
                 //MessageBox.Show(mesto.Naziv);
 
                 //MessageBox.Show(mesto.Naziv);
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdOneToMany_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Glasacka_Mesta gm = session.Load<Glasacka_Mesta>(40);
+
+                foreach(Aktivista_Stranke a in gm.Aktivisti)
+                {
+                    MessageBox.Show(a.Licno_ime + " " + a.Prezime);
+                }
+
+                session.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdPrimedba_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Primedbe gm = session.Load<Primedbe>(20);
+
+                //foreach (Aktivista_Stranke a in gm.Aktivisti)
+                //{
+                //    MessageBox.Show(a.Licno_ime + " " + a.Prezime);
+                //}
+
+                MessageBox.Show(gm.Id.ToString());
+
                 session.Close();
             }
             catch (Exception ex)

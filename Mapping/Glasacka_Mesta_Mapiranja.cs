@@ -24,7 +24,8 @@ namespace Izbori.Mapping
             Map(x => x.Broj_biraca, "BROJ_BIRACA");
             Map(x => x.Broj_mesta, "BROJ_MESTA");
 
-            HasMany(x => x.Primedbe).KeyColumn("PRIMEDBE").LazyLoad().Cascade.All();
+            //HasMany(x => x.Primedbe).KeyColumn("PRIMEDBE").LazyLoad().Cascade.All();
+            HasMany(x => x.Aktivisti).KeyColumn("ID_GLASACKOG_MESTA").LazyLoad().Cascade.All().Inverse();
         }
         
     }

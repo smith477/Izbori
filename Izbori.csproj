@@ -74,6 +74,8 @@
     <Compile Include="DataLayer.cs" />
     <Compile Include="Entities\Aktivista_Stranke.cs" />
     <Compile Include="Entities\Glasacka_Mesta.cs" />
+    <Compile Include="Entities\PrimedbaId.cs" />
+    <Compile Include="Entities\Primedbe.cs" />
     <Compile Include="Entities\Rezultati.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -83,6 +85,7 @@
     </Compile>
     <Compile Include="Mapping\Aktivista_Stranke_Mapiranja.cs" />
     <Compile Include="Mapping\Glasacka_Mesta_Mapiranja.cs" />
+    <Compile Include="Mapping\Primedbe_Mapiranja.cs" />
     <Compile Include="Mapping\Rezultati_Mapiranja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

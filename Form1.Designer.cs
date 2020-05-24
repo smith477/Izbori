@@ -33,6 +33,8 @@
             this.cmdManyToOne = new System.Windows.Forms.Button();
             this.cmdDodavanjeGlasackogMesta = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmdOneToMany = new System.Windows.Forms.Button();
+            this.cmdPrimedba = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -85,11 +87,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cmdOneToMany
+            // 
+            this.cmdOneToMany.Location = new System.Drawing.Point(12, 160);
+            this.cmdOneToMany.Name = "cmdOneToMany";
+            this.cmdOneToMany.Size = new System.Drawing.Size(244, 23);
+            this.cmdOneToMany.TabIndex = 5;
+            this.cmdOneToMany.Text = "Veza OneToMany";
+            this.cmdOneToMany.UseVisualStyleBackColor = true;
+            this.cmdOneToMany.Click += new System.EventHandler(this.cmdOneToMany_Click);
+            // 
+            // cmdPrimedba
+            // 
+            this.cmdPrimedba.Location = new System.Drawing.Point(12, 189);
+            this.cmdPrimedba.Name = "cmdPrimedba";
+            this.cmdPrimedba.Size = new System.Drawing.Size(244, 23);
+            this.cmdPrimedba.TabIndex = 6;
+            this.cmdPrimedba.Text = "Primedba";
+            this.cmdPrimedba.UseVisualStyleBackColor = true;
+            this.cmdPrimedba.Click += new System.EventHandler(this.cmdPrimedba_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdPrimedba);
+            this.Controls.Add(this.cmdOneToMany);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmdDodavanjeGlasackogMesta);
             this.Controls.Add(this.cmdManyToOne);
@@ -108,6 +132,8 @@
         private System.Windows.Forms.Button cmdManyToOne;
         private System.Windows.Forms.Button cmdDodavanjeGlasackogMesta;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cmdOneToMany;
+        private System.Windows.Forms.Button cmdPrimedba;
     }
 }
 
