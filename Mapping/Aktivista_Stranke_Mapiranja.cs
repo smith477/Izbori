@@ -30,7 +30,11 @@ namespace Izbori.Mapping
             //mapiranje veze 1:N Aktivista_Stranke-Glasacko_Mesto
             References(x => x.PratiGlasackoMesto).Column("ID_GLASACKOG_MESTA").LazyLoad();
 
-            
+            HasMany(x => x.Email).KeyColumn("ID_AKTIVISTE_STRANKE").LazyLoad().Cascade.All().Inverse();
+
+            HasMany(x => x.Telefon).KeyColumn("ID_AKTIVISTE_STRANKE").LazyLoad().Cascade.All().Inverse();
+
+
 
         }
     }

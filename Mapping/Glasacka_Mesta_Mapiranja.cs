@@ -28,6 +28,8 @@ namespace Izbori.Mapping
             HasMany(x => x.Aktivisti).KeyColumn("ID_GLASACKOG_MESTA").LazyLoad().Cascade.All().Inverse();
 
             HasMany(x => x.Primedbe).KeyColumn("ID_GLASACKOG_MESTA").LazyLoad().Cascade.All().Inverse();
+
+            HasMany(x => x.Rezultati).KeyColumn("ID_GLASACKOG_MESTA").LazyLoad().Cascade.All().Inverse();
         }
         
     }

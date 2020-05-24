@@ -14,6 +14,8 @@ namespace Izbori.Entities
         public virtual int Broj_mesta { get; set; }
         public virtual IList<Aktivista_Stranke> Aktivisti { get; set; }
         public virtual IList<Primedbe> Primedbe { get; set; }
+
+        public virtual IList<Rezultati> Rezultati { get; set; }
        
 
         public Glasacka_Mesta()
@@ -21,6 +23,8 @@ namespace Izbori.Entities
             Aktivisti = new List<Aktivista_Stranke>();
 
             Primedbe = new List<Primedbe>();
+
+            Rezultati = new List<Rezultati>();
             
         }
 

@@ -15,13 +15,17 @@ namespace Izbori.Mapping
         {
             Table("REZULTATI");
 
-            Id(x => x.Id, "ID_REZULTATA").GeneratedBy.TriggerIdentity();
+            //Id(x => x.Id, "ID_REZULTATA").GeneratedBy.TriggerIdentity();
+
+            CompositeId(x => x.Id)
+                .KeyProperty(x => x.Id, "ID_REZULTATA")
+                .KeyReference(x => x.Glasacka_Mesta, "ID_GLASACKOG_MESTA");
 
             Map(x => x.Broj_Biraca, "BROJ_BIRACA");
             Map(x => x.Procenat_Glasanja, "PROCENAT_GLASANJA");
             Map(x => x.Krug_Izbora, "KRUG_IZBORA");
 
-            References(x => x.Glasacko_Mesto).Column("ID_GLASACKOG_MESTA").LazyLoad();
+            
         }
     }
 }

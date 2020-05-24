@@ -16,13 +16,19 @@ namespace Izbori.Entities
         public virtual string Ulica { get; set; }
         public virtual string Broj { get; set; }
 
+        public virtual IList<Email> Email { get; set; }
+
+        public virtual IList<Telefon> Telefon { get; set; }
+
         //Ostalo je ID_Glasackog_mesta
         //ID_Koordinatora_opstine
         public virtual Glasacka_Mesta PratiGlasackoMesto { get; set; }
 
         public Aktivista_Stranke()
         {
-            
+            Email = new List<Email>();
+            Telefon = new List<Telefon>();
+
         }
     }
 

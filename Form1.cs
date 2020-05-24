@@ -55,7 +55,6 @@ namespace Izbori
 
 
                 session.Save(aktivista);
-                //session.SaveOrUpdate(aktivista);
 
                 session.Flush();
                 session.Close();
@@ -73,14 +72,10 @@ namespace Izbori
                 ISession session = DataLayer.GetSession();
 
                 Aktivista_Stranke aktivista = session.Load<Aktivista_Stranke>(20);
-                Glasacka_Mesta mesto = session.Load<Glasacka_Mesta>(21);
 
                 MessageBox.Show(aktivista.Licno_ime);
                 MessageBox.Show(aktivista.PratiGlasackoMesto.Naziv);
-                //Glasacka_Mesta mesto = aktivista.PratiGlasackoMesto;
-                //MessageBox.Show(mesto.Naziv);
 
-                //MessageBox.Show(mesto.Naziv);
                 session.Close();
             }
             catch(Exception ex)
@@ -132,32 +127,6 @@ namespace Izbori
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ISession session = DataLayer.GetSession();
-
-         
-                Glasacka_Mesta mesto = session.Load<Glasacka_Mesta>(20);
-
-                MessageBox.Show(mesto.Naziv);
-                //foreach (Primedbe pr in mesto.Primedbe)
-                //{
-                //    MessageBox.Show(pr.Primedba);
-                //}
-                //Glasacka_Mesta mesto = aktivista.PratiGlasackoMesto;
-                //MessageBox.Show(mesto.Naziv);
-
-                //MessageBox.Show(mesto.Naziv);
-                session.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void cmdOneToMany_Click(object sender, EventArgs e)
         {
             try
@@ -174,29 +143,6 @@ namespace Izbori
                 session.Close();
             }
             catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void cmdPrimedba_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ISession session = DataLayer.GetSession();
-
-                
-
-                //foreach (Aktivista_Stranke a in gm.Aktivisti)
-                //{
-                //    MessageBox.Show(a.Licno_ime + " " + a.Prezime);
-                //}
-
-                
-
-                session.Close();
-            }
-            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -224,6 +170,67 @@ namespace Izbori
                 //session.Close();
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdEmailAktiviste_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Aktivista_Stranke aktivista = session.Load<Aktivista_Stranke>(20);
+                foreach (Email email in aktivista.Email)
+                {
+                    MessageBox.Show(email.Id.Email);
+                }
+
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdTelefonAktiviste_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Aktivista_Stranke aktivista = session.Load<Aktivista_Stranke>(20);
+                foreach (Telefon telefon in aktivista.Telefon)
+                {
+                    MessageBox.Show(telefon.Id.Telefon);
+                }
+                
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdGMRezultati_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Glasacka_Mesta gm = session.Load<Glasacka_Mesta>(20);
+                foreach (Rezultati rezultat in gm.Rezultati)
+                {
+                    MessageBox.Show("Broj biraca: " + rezultat.Broj_Biraca + " Procenat glasanja: " + rezultat.Procenat_Glasanja + " Krug izbora: "
+                        + rezultat.Krug_Izbora + " Naziv glasackog mesta: " + rezultat.Id.Glasacka_Mesta.Naziv);
+                }
+
+                session.Close();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
