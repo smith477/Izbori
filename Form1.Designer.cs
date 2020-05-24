@@ -32,6 +32,7 @@
             this.cmdDodavanjeAktiviste = new System.Windows.Forms.Button();
             this.cmdManyToOne = new System.Windows.Forms.Button();
             this.cmdDodavanjeGlasackogMesta = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -60,7 +61,7 @@
             this.cmdManyToOne.Name = "cmdManyToOne";
             this.cmdManyToOne.Size = new System.Drawing.Size(244, 26);
             this.cmdManyToOne.TabIndex = 2;
-            this.cmdManyToOne.Text = "Veza many-to-one";
+            this.cmdManyToOne.Text = "Aktivista i Glasacko mesto";
             this.cmdManyToOne.UseVisualStyleBackColor = true;
             this.cmdManyToOne.Click += new System.EventHandler(this.cmdManyToOne_Click);
             // 
@@ -74,11 +75,22 @@
             this.cmdDodavanjeGlasackogMesta.UseVisualStyleBackColor = true;
             this.cmdDodavanjeGlasackogMesta.Click += new System.EventHandler(this.cmdDodavanjeGlasackogMesta_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 131);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(244, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Glasacko mesto i primedbe";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmdDodavanjeGlasackogMesta);
             this.Controls.Add(this.cmdManyToOne);
             this.Controls.Add(this.cmdDodavanjeAktiviste);
@@ -95,6 +107,7 @@
         private System.Windows.Forms.Button cmdDodavanjeAktiviste;
         private System.Windows.Forms.Button cmdManyToOne;
         private System.Windows.Forms.Button cmdDodavanjeGlasackogMesta;
+        private System.Windows.Forms.Button button1;
     }
 }
 

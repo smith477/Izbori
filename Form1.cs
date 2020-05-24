@@ -115,5 +115,31 @@ namespace Izbori
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+         
+                Glasacka_Mesta mesto = session.Load<Glasacka_Mesta>(20);
+
+                MessageBox.Show(mesto.Naziv);
+                foreach (Primedbe pr in mesto.Primedbe)
+                {
+                    MessageBox.Show(pr.Primedba);
+                }
+                //Glasacka_Mesta mesto = aktivista.PratiGlasackoMesto;
+                //MessageBox.Show(mesto.Naziv);
+
+                //MessageBox.Show(mesto.Naziv);
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

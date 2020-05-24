@@ -1,0 +1,27 @@
+﻿using FluentNHibernate.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Izbori.Entities;
+
+
+namespace Izbori.Mapping
+{
+    class Rezultati_Mapiranja : ClassMap<Rezultati>
+    {
+        public Rezultati_Mapiranja()
+        {
+            Table("REZULTATI");
+
+            Id(x => x.Id, "ID_REZULTATA").GeneratedBy.TriggerIdentity();
+
+            Map(x => x.Broj_Biraca, "BROJ_BIRACA");
+            Map(x => x.Procenat_Glasanja, "PROCENAT_GLASANJA");
+            Map(x => x.Krug_Izbora, "KRUG_IZBORA");
+
+            References(x => x.Glasacko_Mesto).Column("ID_GLASACKOG_MESTA").LazyLoad();
+        }
+    }
+}
