@@ -76,6 +76,7 @@
     <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\EmailId.cs" />
     <Compile Include="Entities\Glasacka_Mesta.cs" />
+    <Compile Include="Entities\Koordinator_Opstine.cs" />
     <Compile Include="Entities\Primedbe.cs" />
     <Compile Include="Entities\PrimedbeId.cs" />
     <Compile Include="Entities\Rezultati.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Mapping\Aktivista_Stranke_Mapiranja.cs" />
     <Compile Include="Mapping\Email_Mapiranja.cs" />
     <Compile Include="Mapping\Glasacka_Mesta_Mapiranja.cs" />
+    <Compile Include="Mapping\Koordinator_Opstine_Mapiranja.cs" />
     <Compile Include="Mapping\Primedbe_Mapiranja.cs" />
     <Compile Include="Mapping\Rezultati_Mapiranja.cs" />
     <Compile Include="Mapping\Telefon_Mapiranja.cs" />

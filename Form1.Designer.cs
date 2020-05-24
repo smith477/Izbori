@@ -37,6 +37,8 @@
             this.cmdEmailAktiviste = new System.Windows.Forms.Button();
             this.cmdTelefonAktiviste = new System.Windows.Forms.Button();
             this.cmdGMRezultati = new System.Windows.Forms.Button();
+            this.cmdKoordinatorOpstine = new System.Windows.Forms.Button();
+            this.cmdKreirajKoordinatora = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -129,11 +131,33 @@
             this.cmdGMRezultati.UseVisualStyleBackColor = true;
             this.cmdGMRezultati.Click += new System.EventHandler(this.cmdGMRezultati_Click);
             // 
+            // cmdKoordinatorOpstine
+            // 
+            this.cmdKoordinatorOpstine.Location = new System.Drawing.Point(12, 276);
+            this.cmdKoordinatorOpstine.Name = "cmdKoordinatorOpstine";
+            this.cmdKoordinatorOpstine.Size = new System.Drawing.Size(268, 23);
+            this.cmdKoordinatorOpstine.TabIndex = 10;
+            this.cmdKoordinatorOpstine.Text = "Ucitavanje Koordinatora Opstine";
+            this.cmdKoordinatorOpstine.UseVisualStyleBackColor = true;
+            this.cmdKoordinatorOpstine.Click += new System.EventHandler(this.cmdKoordinatorOpstine_Click);
+            // 
+            // cmdKreirajKoordinatora
+            // 
+            this.cmdKreirajKoordinatora.Location = new System.Drawing.Point(12, 305);
+            this.cmdKreirajKoordinatora.Name = "cmdKreirajKoordinatora";
+            this.cmdKreirajKoordinatora.Size = new System.Drawing.Size(268, 27);
+            this.cmdKreirajKoordinatora.TabIndex = 11;
+            this.cmdKreirajKoordinatora.Text = "Kreiraj Koordinatora Opstine";
+            this.cmdKreirajKoordinatora.UseVisualStyleBackColor = true;
+            this.cmdKreirajKoordinatora.Click += new System.EventHandler(this.cmdKreirajKoordinatora_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdKreirajKoordinatora);
+            this.Controls.Add(this.cmdKoordinatorOpstine);
             this.Controls.Add(this.cmdGMRezultati);
             this.Controls.Add(this.cmdTelefonAktiviste);
             this.Controls.Add(this.cmdEmailAktiviste);
@@ -160,6 +184,8 @@
         private System.Windows.Forms.Button cmdEmailAktiviste;
         private System.Windows.Forms.Button cmdTelefonAktiviste;
         private System.Windows.Forms.Button cmdGMRezultati;
+        private System.Windows.Forms.Button cmdKoordinatorOpstine;
+        private System.Windows.Forms.Button cmdKreirajKoordinatora;
     }
 }
 

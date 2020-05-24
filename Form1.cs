@@ -235,5 +235,54 @@ namespace Izbori
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdKoordinatorOpstine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                IList<Aktivista_Stranke> aktivista = session.QueryOver<Aktivista_Stranke>()
+                                                            .Where(a => a.Id == 20)
+                                                            .List<Aktivista_Stranke>();
+
+                Koordinator_Opstine k = (Koordinator_Opstine)aktivista[0];
+                MessageBox.Show(k.Adresa_Kancelarije);
+
+                session.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdKreirajKoordinatora_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Koordinator_Opstine koordinator = new Koordinator_Opstine();
+
+                koordinator.Licno_ime = "Marko";
+                koordinator.Ime_roditelja = "Miodrag";
+                koordinator.Prezime = "Marinkovic";
+                koordinator.Datum_rodjenja = Convert.ToDateTime("22-SEP-1998");
+                koordinator.Ulica = "Nova Ulica";
+                koordinator.Broj = "7a";
+
+                koordinator.Adresa_Kancelarije = "Nova Adresa";
+                koordinator.Ime_Opstine = "Medijana";
+
+                session.Save(koordinator);
+                session.Flush();
+                session.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
