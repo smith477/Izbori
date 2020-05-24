@@ -1,0 +1,21 @@
+﻿using FluentNHibernate.Mapping;
+using Izbori.Entities;
+using NHibernate.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Izbori.Mapping
+{
+    class Akcije_Mapiranja : SubclassMap<Akcije>
+    {
+        public Akcije_Mapiranja()
+        {
+            Table("AKCIJE");
+
+            KeyColumn("ID_IZBORNE_AKTIVNOSTI");
+        }
+    }
+}

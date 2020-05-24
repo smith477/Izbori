@@ -284,5 +284,27 @@ namespace Izbori
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdAkcija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                IList<Izborne_Aktivnosti> aktivnost = session.QueryOver<Izborne_Aktivnosti>()
+                                                            .Where(a => a.Id == 20)
+                                                            .List<Izborne_Aktivnosti>();
+
+                Deljenje_Letki ak = (Deljenje_Letki)aktivnost[0];
+                MessageBox.Show(ak.Koordinator.Licno_ime);
+
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        
+        }
     }
 }

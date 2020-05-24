@@ -39,6 +39,7 @@
             this.cmdGMRezultati = new System.Windows.Forms.Button();
             this.cmdKoordinatorOpstine = new System.Windows.Forms.Button();
             this.cmdKreirajKoordinatora = new System.Windows.Forms.Button();
+            this.cmdAkcija = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -151,11 +152,22 @@
             this.cmdKreirajKoordinatora.UseVisualStyleBackColor = true;
             this.cmdKreirajKoordinatora.Click += new System.EventHandler(this.cmdKreirajKoordinatora_Click);
             // 
+            // cmdAkcija
+            // 
+            this.cmdAkcija.Location = new System.Drawing.Point(12, 338);
+            this.cmdAkcija.Name = "cmdAkcija";
+            this.cmdAkcija.Size = new System.Drawing.Size(268, 23);
+            this.cmdAkcija.TabIndex = 12;
+            this.cmdAkcija.Text = "Vrati Akciju";
+            this.cmdAkcija.UseVisualStyleBackColor = true;
+            this.cmdAkcija.Click += new System.EventHandler(this.cmdAkcija_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdAkcija);
             this.Controls.Add(this.cmdKreirajKoordinatora);
             this.Controls.Add(this.cmdKoordinatorOpstine);
             this.Controls.Add(this.cmdGMRezultati);
@@ -186,6 +198,7 @@
         private System.Windows.Forms.Button cmdGMRezultati;
         private System.Windows.Forms.Button cmdKoordinatorOpstine;
         private System.Windows.Forms.Button cmdKreirajKoordinatora;
+        private System.Windows.Forms.Button cmdAkcija;
     }
 }
 
