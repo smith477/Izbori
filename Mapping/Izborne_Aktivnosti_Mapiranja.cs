@@ -19,6 +19,7 @@ namespace Izbori.Mapping
             Id(x => x.Id, "ID_IZBORNE_AKTIVNOSTI").GeneratedBy.TriggerIdentity();
 
             References(x => x.Koordinator).Column("ID_AKTIVISTE_STRANKE").LazyLoad();
+
         }
        
     }

@@ -34,6 +34,12 @@ namespace Izbori.Mapping
 
             HasMany(x => x.Telefon).KeyColumn("ID_AKTIVISTE_STRANKE").LazyLoad().Cascade.All().Inverse();
 
+            HasManyToMany(x => x.Akcije)
+                .Table("UCESTVUJE")
+                .ParentKeyColumn("ID_AKTIVISTE_STRANKE")
+                .ChildKeyColumn("ID_AKCIJE")
+                .Cascade.All();
+
 
 
         }

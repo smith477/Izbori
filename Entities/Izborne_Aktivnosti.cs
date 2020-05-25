@@ -14,7 +14,7 @@ namespace Izbori.Entities
 
         public Izborne_Aktivnosti()
         {
-
+            Koordinator = new Koordinator_Opstine();
         }
     }
 }

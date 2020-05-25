@@ -40,6 +40,10 @@
             this.cmdKoordinatorOpstine = new System.Windows.Forms.Button();
             this.cmdKreirajKoordinatora = new System.Windows.Forms.Button();
             this.cmdAkcija = new System.Windows.Forms.Button();
+            this.cmdDodajLetke = new System.Windows.Forms.Button();
+            this.cmdGetSusreti = new System.Windows.Forms.Button();
+            this.cmdDodajMitingNaZatvorenom = new System.Windows.Forms.Button();
+            this.cmdManyToMany = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -158,15 +162,59 @@
             this.cmdAkcija.Name = "cmdAkcija";
             this.cmdAkcija.Size = new System.Drawing.Size(268, 23);
             this.cmdAkcija.TabIndex = 12;
-            this.cmdAkcija.Text = "Vrati Akciju";
+            this.cmdAkcija.Text = "Vrati Akciju Deljenje_Letki";
             this.cmdAkcija.UseVisualStyleBackColor = true;
             this.cmdAkcija.Click += new System.EventHandler(this.cmdAkcija_Click);
+            // 
+            // cmdDodajLetke
+            // 
+            this.cmdDodajLetke.Location = new System.Drawing.Point(12, 367);
+            this.cmdDodajLetke.Name = "cmdDodajLetke";
+            this.cmdDodajLetke.Size = new System.Drawing.Size(268, 23);
+            this.cmdDodajLetke.TabIndex = 13;
+            this.cmdDodajLetke.Text = "Dodaj Novu Letku";
+            this.cmdDodajLetke.UseVisualStyleBackColor = true;
+            this.cmdDodajLetke.Click += new System.EventHandler(this.cmdDodajLetke_Click);
+            // 
+            // cmdGetSusreti
+            // 
+            this.cmdGetSusreti.Location = new System.Drawing.Point(12, 396);
+            this.cmdGetSusreti.Name = "cmdGetSusreti";
+            this.cmdGetSusreti.Size = new System.Drawing.Size(268, 23);
+            this.cmdGetSusreti.TabIndex = 14;
+            this.cmdGetSusreti.Text = "GET Susrete Kandidata I Gradjana";
+            this.cmdGetSusreti.UseVisualStyleBackColor = true;
+            this.cmdGetSusreti.Click += new System.EventHandler(this.cmdGetSusreti_Click);
+            // 
+            // cmdDodajMitingNaZatvorenom
+            // 
+            this.cmdDodajMitingNaZatvorenom.Location = new System.Drawing.Point(286, 12);
+            this.cmdDodajMitingNaZatvorenom.Name = "cmdDodajMitingNaZatvorenom";
+            this.cmdDodajMitingNaZatvorenom.Size = new System.Drawing.Size(268, 23);
+            this.cmdDodajMitingNaZatvorenom.TabIndex = 15;
+            this.cmdDodajMitingNaZatvorenom.Text = "Dodaj Miting Na Zatvorenom";
+            this.cmdDodajMitingNaZatvorenom.UseVisualStyleBackColor = true;
+            this.cmdDodajMitingNaZatvorenom.Click += new System.EventHandler(this.cmdDodajMitingNaZatvorenom_Click);
+            // 
+            // cmdManyToMany
+            // 
+            this.cmdManyToMany.Location = new System.Drawing.Point(286, 41);
+            this.cmdManyToMany.Name = "cmdManyToMany";
+            this.cmdManyToMany.Size = new System.Drawing.Size(268, 23);
+            this.cmdManyToMany.TabIndex = 16;
+            this.cmdManyToMany.Text = "Many-To-Many Veza";
+            this.cmdManyToMany.UseVisualStyleBackColor = true;
+            this.cmdManyToMany.Click += new System.EventHandler(this.cmdManyToMany_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdManyToMany);
+            this.Controls.Add(this.cmdDodajMitingNaZatvorenom);
+            this.Controls.Add(this.cmdGetSusreti);
+            this.Controls.Add(this.cmdDodajLetke);
             this.Controls.Add(this.cmdAkcija);
             this.Controls.Add(this.cmdKreirajKoordinatora);
             this.Controls.Add(this.cmdKoordinatorOpstine);
@@ -199,6 +247,10 @@
         private System.Windows.Forms.Button cmdKoordinatorOpstine;
         private System.Windows.Forms.Button cmdKreirajKoordinatora;
         private System.Windows.Forms.Button cmdAkcija;
+        private System.Windows.Forms.Button cmdDodajLetke;
+        private System.Windows.Forms.Button cmdGetSusreti;
+        private System.Windows.Forms.Button cmdDodajMitingNaZatvorenom;
+        private System.Windows.Forms.Button cmdManyToMany;
     }
 }
 

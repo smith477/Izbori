@@ -20,6 +20,8 @@ namespace Izbori.Entities
 
         public virtual IList<Telefon> Telefon { get; set; }
 
+        public virtual IList<Akcije> Akcije { get; set; }
+
         //Ostalo je ID_Glasackog_mesta
         //ID_Koordinatora_opstine
         public virtual Glasacka_Mesta PratiGlasackoMesto { get; set; }
@@ -28,6 +30,7 @@ namespace Izbori.Entities
         {
             Email = new List<Email>();
             Telefon = new List<Telefon>();
+            Akcije = new List<Akcije>();
 
         }
     }

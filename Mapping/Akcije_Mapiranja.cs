@@ -16,6 +16,15 @@ namespace Izbori.Mapping
             Table("AKCIJE");
 
             KeyColumn("ID_IZBORNE_AKTIVNOSTI");
+
+            HasManyToMany(x => x.Aktivisti)
+                .Table("UCESTVUJE")
+                .ParentKeyColumn("ID_AKCIJE")
+                .ChildKeyColumn("ID_AKTIVISTE_STRANKE")
+                .Inverse()
+                .Cascade.All();
+
+
         }
     }
 }

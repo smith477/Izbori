@@ -21,6 +21,7 @@ namespace Izbori.Mapping
             Map(x => x.Ime_Opstine, "IME_OPSTINE");
 
             HasMany(x => x.Izborne_Aktivnosti).KeyColumn("ID_AKTIVISTE_STRANKE").LazyLoad().Cascade.All().Inverse();
+
         }
     }
 }

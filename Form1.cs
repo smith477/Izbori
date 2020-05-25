@@ -265,9 +265,9 @@ namespace Izbori
 
                 Koordinator_Opstine koordinator = new Koordinator_Opstine();
 
-                koordinator.Licno_ime = "Marko";
+                koordinator.Licno_ime = "Ana";
                 koordinator.Ime_roditelja = "Miodrag";
-                koordinator.Prezime = "Marinkovic";
+                koordinator.Prezime = "Anic";
                 koordinator.Datum_rodjenja = Convert.ToDateTime("22-SEP-1998");
                 koordinator.Ulica = "Nova Ulica";
                 koordinator.Broj = "7a";
@@ -305,6 +305,129 @@ namespace Izbori
                 MessageBox.Show(ex.Message);
             }
         
+        }
+
+        private void cmdDodajLetke_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Deljenje_Letki letka = new Deljenje_Letki();
+                Koordinator_Opstine koordinator = new Koordinator_Opstine()
+                {
+                    Licno_ime = "Antonio",
+                    Ime_roditelja = "Migel",
+                    Prezime = "Banderas",
+                    Datum_rodjenja = Convert.ToDateTime("23-APR-1972"),
+                    Adresa_Kancelarije = "Barcelona",
+                    Ime_Opstine = "Barca",
+                    Ulica = "La Casa",
+                    Broj = "66"
+                };
+                session.Save(koordinator);
+                session.Flush();
+
+                letka.Grad = "Bujanovac";
+                letka.Koordinator = koordinator;
+
+                session.Save(letka);
+                session.Flush();
+
+
+                
+                Lokacije lokacija = new Lokacije();
+                lokacija.Id.Deljenje_Letki = letka;
+                lokacija.Id.Lokacija = "Center";
+                session.Save(lokacija);
+                session.Flush();
+                letka.Lokacije.Add(lokacija);
+
+                session.Save(letka);
+                session.Flush();
+
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdGetSusreti_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Susreti_Kandidata_Sa_Gradjanima susreti = session.Get<Susreti_Kandidata_Sa_Gradjanima>(22);
+                if(susreti != null)
+                {
+                    MessageBox.Show("Grad: " + susreti.Grad + "\nVreme: " + susreti.Vreme.ToString("dd-MM-yyyy") + "\nZaduzen koordinator: "
+                    + susreti.Koordinator.Licno_ime + " " + susreti.Koordinator.Prezime);
+                }
+                else
+                {
+                    MessageBox.Show("Ne postoji odeljenje sa zadatim identifikatorom");
+                }
+                
+                session.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdDodajMitingNaZatvorenom_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                //IList<Gost> gost = session.QueryOver<Gost>()
+                //                              .Where(g => g.Id.Id == 20)
+                //                              .List<Gost>();
+
+                //MessageBox.Show(gost[0].Licno_Ime);
+
+                Politicki_Miting miting = session.Get<Politicki_Miting>(25);
+                Politicki_Miting_Na_Zatvorenom zatvorenom = (Politicki_Miting_Na_Zatvorenom)miting;
+                MessageBox.Show(zatvorenom.Gosti[0].Licno_Ime);
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdManyToMany_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Aktivista_Stranke aktivista = session.Load<Aktivista_Stranke>(20);
+
+                foreach(Akcije a in aktivista.Akcije)
+                {
+                    MessageBox.Show(a.Id.ToString());
+                }
+
+                Akcije akcija = session.Load<Akcije>(20);
+
+                foreach(Aktivista_Stranke a in akcija.Aktivisti)
+                {
+                    MessageBox.Show(a.Licno_ime);
+                }
+
+                session.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
