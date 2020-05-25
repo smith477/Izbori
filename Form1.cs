@@ -588,29 +588,19 @@ namespace Izbori
         {
             try
             {
-                ISession s = DataLayer.GetSession();
+                ISession session = DataLayer.GetSession();
 
-                IQuery q = s.CreateQuery("select count(o) sum(o.Broj_Biraca * (o.Procenat_Glasanja/100))," +
-                                        " from Rezultati o ");
+                IQuery q = session.CreateQuery("select sum(o.Broj_Biraca * (o.Procenat_Glasanja/100)) from Rezultati o;");
 
-                //za slucaj da upit vraca visestruku vrednost
-                IList<object[]> result = q.List<object[]>();
+                Int64 brojGlasova = q.UniqueResult<Int64>();
 
-                foreach (object[] r in result)
-                {
-                    Int64 broj_glasova = (Int64)r[0];
-                    long broj = (long)r[1];
+                MessageBox.Show(brojGlasova.ToString());
 
-                    MessageBox.Show(broj.ToString() + " " + broj_glasova.ToString());
-                }
-
-                s.Close();
-
-
+                session.Close();
             }
-            catch (Exception ec)
+            catch (Exception ex)
             {
-                MessageBox.Show(ec.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
