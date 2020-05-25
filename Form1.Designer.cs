@@ -56,6 +56,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.cmdRefresh = new System.Windows.Forms.Button();
+            this.cmdKreiranjeUpita = new System.Windows.Forms.Button();
+            this.cmdKreiranjeUpita1 = new System.Windows.Forms.Button();
+            this.cmdKreiranjeUpitaSaParametrima = new System.Windows.Forms.Button();
+            this.cmdKreiranjeUpitaSaImenovanimParametrima = new System.Windows.Forms.Button();
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1 = new System.Windows.Forms.Button();
+            this.cmdKoriscenjeEnumerable = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -338,11 +345,88 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // cmdRefresh
+            // 
+            this.cmdRefresh.Location = new System.Drawing.Point(561, 12);
+            this.cmdRefresh.Name = "cmdRefresh";
+            this.cmdRefresh.Size = new System.Drawing.Size(258, 23);
+            this.cmdRefresh.TabIndex = 29;
+            this.cmdRefresh.Text = "Refresh";
+            this.cmdRefresh.UseVisualStyleBackColor = true;
+            this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
+            // 
+            // cmdKreiranjeUpita
+            // 
+            this.cmdKreiranjeUpita.Location = new System.Drawing.Point(561, 40);
+            this.cmdKreiranjeUpita.Name = "cmdKreiranjeUpita";
+            this.cmdKreiranjeUpita.Size = new System.Drawing.Size(258, 23);
+            this.cmdKreiranjeUpita.TabIndex = 30;
+            this.cmdKreiranjeUpita.Text = "Kreiranje upita";
+            this.cmdKreiranjeUpita.UseVisualStyleBackColor = true;
+            this.cmdKreiranjeUpita.Click += new System.EventHandler(this.cmdKreiranjeUpita_Click);
+            // 
+            // cmdKreiranjeUpita1
+            // 
+            this.cmdKreiranjeUpita1.Location = new System.Drawing.Point(561, 73);
+            this.cmdKreiranjeUpita1.Name = "cmdKreiranjeUpita1";
+            this.cmdKreiranjeUpita1.Size = new System.Drawing.Size(258, 23);
+            this.cmdKreiranjeUpita1.TabIndex = 31;
+            this.cmdKreiranjeUpita1.Text = "Kreiranje upita 1";
+            this.cmdKreiranjeUpita1.UseVisualStyleBackColor = true;
+            this.cmdKreiranjeUpita1.Click += new System.EventHandler(this.cmdKreiranjeUpita1_Click);
+            // 
+            // cmdKreiranjeUpitaSaParametrima
+            // 
+            this.cmdKreiranjeUpitaSaParametrima.Location = new System.Drawing.Point(561, 102);
+            this.cmdKreiranjeUpitaSaParametrima.Name = "cmdKreiranjeUpitaSaParametrima";
+            this.cmdKreiranjeUpitaSaParametrima.Size = new System.Drawing.Size(258, 23);
+            this.cmdKreiranjeUpitaSaParametrima.TabIndex = 32;
+            this.cmdKreiranjeUpitaSaParametrima.Text = "Kreiranje upita sa parametrima";
+            this.cmdKreiranjeUpitaSaParametrima.UseVisualStyleBackColor = true;
+            this.cmdKreiranjeUpitaSaParametrima.Click += new System.EventHandler(this.cmdKreiranjeUpitaSaParametrima_Click);
+            // 
+            // cmdKreiranjeUpitaSaImenovanimParametrima
+            // 
+            this.cmdKreiranjeUpitaSaImenovanimParametrima.Location = new System.Drawing.Point(561, 131);
+            this.cmdKreiranjeUpitaSaImenovanimParametrima.Name = "cmdKreiranjeUpitaSaImenovanimParametrima";
+            this.cmdKreiranjeUpitaSaImenovanimParametrima.Size = new System.Drawing.Size(258, 23);
+            this.cmdKreiranjeUpitaSaImenovanimParametrima.TabIndex = 33;
+            this.cmdKreiranjeUpitaSaImenovanimParametrima.Text = "Kreiranje upita sa imenovanim parametrima";
+            this.cmdKreiranjeUpitaSaImenovanimParametrima.UseVisualStyleBackColor = true;
+            this.cmdKreiranjeUpitaSaImenovanimParametrima.Click += new System.EventHandler(this.cmdKreiranjeUpitaSaImenovanimParametrima_Click);
+            // 
+            // cmdKreiranjeUpitaSaImenovanimParametrima1
+            // 
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1.Location = new System.Drawing.Point(561, 159);
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1.Name = "cmdKreiranjeUpitaSaImenovanimParametrima1";
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1.Size = new System.Drawing.Size(258, 23);
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1.TabIndex = 34;
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1.Text = "Kreiranje upita sa imenovanim parametrima 1";
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1.UseVisualStyleBackColor = true;
+            this.cmdKreiranjeUpitaSaImenovanimParametrima1.Click += new System.EventHandler(this.cmdKreiranjeUpitaSaImenovanimParametrima1_Click);
+            // 
+            // cmdKoriscenjeEnumerable
+            // 
+            this.cmdKoriscenjeEnumerable.Location = new System.Drawing.Point(561, 188);
+            this.cmdKoriscenjeEnumerable.Name = "cmdKoriscenjeEnumerable";
+            this.cmdKoriscenjeEnumerable.Size = new System.Drawing.Size(258, 23);
+            this.cmdKoriscenjeEnumerable.TabIndex = 35;
+            this.cmdKoriscenjeEnumerable.Text = "Koriscenje Enumerable";
+            this.cmdKoriscenjeEnumerable.UseVisualStyleBackColor = true;
+            this.cmdKoriscenjeEnumerable.Click += new System.EventHandler(this.cmdKoriscenjeEnumerable_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(831, 450);
+            this.Controls.Add(this.cmdKoriscenjeEnumerable);
+            this.Controls.Add(this.cmdKreiranjeUpitaSaImenovanimParametrima1);
+            this.Controls.Add(this.cmdKreiranjeUpitaSaImenovanimParametrima);
+            this.Controls.Add(this.cmdKreiranjeUpitaSaParametrima);
+            this.Controls.Add(this.cmdKreiranjeUpita1);
+            this.Controls.Add(this.cmdKreiranjeUpita);
+            this.Controls.Add(this.cmdRefresh);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -407,6 +491,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button cmdRefresh;
+        private System.Windows.Forms.Button cmdKreiranjeUpita;
+        private System.Windows.Forms.Button cmdKreiranjeUpita1;
+        private System.Windows.Forms.Button cmdKreiranjeUpitaSaParametrima;
+        private System.Windows.Forms.Button cmdKreiranjeUpitaSaImenovanimParametrima;
+        private System.Windows.Forms.Button cmdKreiranjeUpitaSaImenovanimParametrima1;
+        private System.Windows.Forms.Button cmdKoriscenjeEnumerable;
     }
 }
 

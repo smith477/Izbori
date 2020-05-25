@@ -23,3 +23,29 @@ D:\Faks\Sistemi baza\Projekat\Izbori\obj\Debug\Izbori.csproj.GenerateResource.ca
 D:\Faks\Sistemi baza\Projekat\Izbori\obj\Debug\Izbori.csproj.CopyComplete
 D:\Faks\Sistemi baza\Projekat\Izbori\obj\Debug\Izbori.exe
 D:\Faks\Sistemi baza\Projekat\Izbori\obj\Debug\Izbori.pdb
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Izbori.exe.config
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Izbori.exe
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Izbori.pdb
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Antlr3.Runtime.dll
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\FluentNHibernate.dll
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Iesi.Collections.dll
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\NHibernate.dll
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Remotion.Linq.dll
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Antlr3.Runtime.xml
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\FluentNHibernate.xml
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Iesi.Collections.xml
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\NHibernate.xml
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Remotion.Linq.xml
+C:\Users\acer\Desktop\faza2\Izbori\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.csprojAssemblyReference.cache
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.Form1.resources
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.Izmena_Glasackog_Mesta.resources
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.Koordinator_Opstine_Informacije.resources
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.Properties.Resources.resources
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.csproj.GenerateResource.cache
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.csproj.CopyComplete
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.exe
+C:\Users\acer\Desktop\faza2\Izbori\obj\Debug\Izbori.pdb

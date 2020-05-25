@@ -707,6 +707,204 @@ namespace Izbori
                 MessageBox.Show(ec.Message);
             }
         }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Koordinator_Opstine k = session.Load<Koordinator_Opstine>(20);
+
+                MessageBox.Show("Trenutna vrednost: " + k.Adresa_Kancelarije);
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Koordinator_Opstine k = session.Load<Koordinator_Opstine>(20);
+                //originalna sesija se zatvara i raskida se veza izmedju objekta i sesije
+
+                //objekat se modifikuje potpuno nezavisno od sesije
+                k.Adresa_Kancelarije = "Azurirana Adresa 40";
+
+                //otvara se nova sesija
+
+                //poziva se Update i objekat se povezuje sa novom sesijom
+                session.Update(k);
+
+                session.Flush();
+
+                session.Refresh(k);
+                MessageBox.Show("Azurirana vrednost: " + k.Adresa_Kancelarije);
+                session.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void cmdKreiranjeUpita_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from Aktivista_Stranke");
+
+                IList<Aktivista_Stranke> rezultati = q.List<Aktivista_Stranke>();
+                foreach (Aktivista_Stranke a in rezultati)
+                {
+                    MessageBox.Show(a.Prezime);
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdKreiranjeUpita1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from Aktivista_Stranke as o where o.Licno_ime = 'Ana'");
+
+                IList<Aktivista_Stranke> rezultati = q.List<Aktivista_Stranke>();
+                foreach (Aktivista_Stranke a in rezultati)
+                {
+                    MessageBox.Show(a.Prezime);
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdKreiranjeUpitaSaParametrima_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                //Paramterizovani upit
+                IQuery q = s.CreateQuery("from Koordinator_Opstine as o where o.Adresa_Kancelarije = ? and o.Ime_Opstine >= ?");
+                q.SetParameter(0, "BK 22");
+                q.SetParameter(1, "Medijana");
+
+                IList<Koordinator_Opstine> rezultat = q.List<Koordinator_Opstine>();
+
+                foreach (Koordinator_Opstine ko in rezultat)
+                {
+                    MessageBox.Show(ko.Licno_ime + "    " + ko.Prezime);
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdKreiranjeUpitaSaImenovanimParametrima_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                //Paramterizovani upit
+                IQuery q = s.CreateQuery("select o.Rezultati from Glasacka_Mesta as o "
+                                        + " where o.Naziv = :naziv and o.Broj_biraca >= :bb");
+                q.SetString("naziv", "Sveti Sava");
+                q.SetInt32("bb", 500);
+
+                IList<Rezultati> rezultati = q.List<Rezultati>();
+
+                foreach (Rezultati r in rezultati)
+                {
+                    MessageBox.Show(r.Procenat_Glasanja.ToString());
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdKreiranjeUpitaSaImenovanimParametrima1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("select o.PratiGlasackoMesto from Aktivista_Stranke as o "
+                                        + " where o.Licno_ime = :lime and o.Prezime = :pime"
+                                        + " and o.PratiGlasackoMesto.Broj_biraca >= :bb");
+                q.SetString("lime", "Marko");
+                q.SetString("pime", "Ilic");
+                q.SetInt32("bb", 55);
+
+                IList<Glasacka_Mesta> rezultati = q.List<Glasacka_Mesta>();
+
+                foreach (Glasacka_Mesta gm in rezultati)
+                {
+                    MessageBox.Show(gm.Naziv);
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdKoriscenjeEnumerable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from Aktivista_Stranke");
+
+                IEnumerable<Aktivista_Stranke> rezultati = q.Enumerable<Aktivista_Stranke>();
+
+                foreach (Aktivista_Stranke a in rezultati)
+                {
+                    if (a.Licno_ime == "Antonio")
+                        MessageBox.Show(a.Licno_ime + "    " + a.Prezime);
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
     }
     }
 
