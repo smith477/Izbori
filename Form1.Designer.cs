@@ -44,6 +44,13 @@
             this.cmdGetSusreti = new System.Windows.Forms.Button();
             this.cmdDodajMitingNaZatvorenom = new System.Windows.Forms.Button();
             this.cmdManyToMany = new System.Windows.Forms.Button();
+            this.cmdUpdate = new System.Windows.Forms.Button();
+            this.cmdDelete = new System.Windows.Forms.Button();
+            this.cmdTransakcija = new System.Windows.Forms.Button();
+            this.cmdLINQ = new System.Windows.Forms.Button();
+            this.cmdLINQ1 = new System.Windows.Forms.Button();
+            this.cmdLINQ2 = new System.Windows.Forms.Button();
+            this.cmdPregledAktivista = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -206,11 +213,88 @@
             this.cmdManyToMany.UseVisualStyleBackColor = true;
             this.cmdManyToMany.Click += new System.EventHandler(this.cmdManyToMany_Click);
             // 
+            // cmdUpdate
+            // 
+            this.cmdUpdate.Location = new System.Drawing.Point(286, 73);
+            this.cmdUpdate.Name = "cmdUpdate";
+            this.cmdUpdate.Size = new System.Drawing.Size(268, 23);
+            this.cmdUpdate.TabIndex = 17;
+            this.cmdUpdate.Text = "Update";
+            this.cmdUpdate.UseVisualStyleBackColor = true;
+            this.cmdUpdate.Click += new System.EventHandler(this.cmdUpdate_Click);
+            // 
+            // cmdDelete
+            // 
+            this.cmdDelete.Location = new System.Drawing.Point(286, 102);
+            this.cmdDelete.Name = "cmdDelete";
+            this.cmdDelete.Size = new System.Drawing.Size(268, 23);
+            this.cmdDelete.TabIndex = 18;
+            this.cmdDelete.Text = "Delete";
+            this.cmdDelete.UseVisualStyleBackColor = true;
+            this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
+            // 
+            // cmdTransakcija
+            // 
+            this.cmdTransakcija.Location = new System.Drawing.Point(286, 131);
+            this.cmdTransakcija.Name = "cmdTransakcija";
+            this.cmdTransakcija.Size = new System.Drawing.Size(268, 23);
+            this.cmdTransakcija.TabIndex = 19;
+            this.cmdTransakcija.Text = "Transakcija";
+            this.cmdTransakcija.UseVisualStyleBackColor = true;
+            this.cmdTransakcija.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmdLINQ
+            // 
+            this.cmdLINQ.Location = new System.Drawing.Point(286, 160);
+            this.cmdLINQ.Name = "cmdLINQ";
+            this.cmdLINQ.Size = new System.Drawing.Size(268, 23);
+            this.cmdLINQ.TabIndex = 20;
+            this.cmdLINQ.Text = "LINQ";
+            this.cmdLINQ.UseVisualStyleBackColor = true;
+            this.cmdLINQ.Click += new System.EventHandler(this.cmdLINQ_Click);
+            // 
+            // cmdLINQ1
+            // 
+            this.cmdLINQ1.Location = new System.Drawing.Point(286, 189);
+            this.cmdLINQ1.Name = "cmdLINQ1";
+            this.cmdLINQ1.Size = new System.Drawing.Size(268, 23);
+            this.cmdLINQ1.TabIndex = 21;
+            this.cmdLINQ1.Text = "LINQ 1";
+            this.cmdLINQ1.UseVisualStyleBackColor = true;
+            this.cmdLINQ1.Click += new System.EventHandler(this.cmdLINQ1_Click);
+            // 
+            // cmdLINQ2
+            // 
+            this.cmdLINQ2.Location = new System.Drawing.Point(286, 218);
+            this.cmdLINQ2.Name = "cmdLINQ2";
+            this.cmdLINQ2.Size = new System.Drawing.Size(268, 23);
+            this.cmdLINQ2.TabIndex = 22;
+            this.cmdLINQ2.Text = "LINQ 2";
+            this.cmdLINQ2.UseVisualStyleBackColor = true;
+            this.cmdLINQ2.Click += new System.EventHandler(this.cmdLINQ2_Click);
+            // 
+            // cmdPregledAktivista
+            // 
+            this.cmdPregledAktivista.Location = new System.Drawing.Point(286, 247);
+            this.cmdPregledAktivista.Name = "cmdPregledAktivista";
+            this.cmdPregledAktivista.Size = new System.Drawing.Size(268, 23);
+            this.cmdPregledAktivista.TabIndex = 23;
+            this.cmdPregledAktivista.Text = "Pregled Aktivista";
+            this.cmdPregledAktivista.UseVisualStyleBackColor = true;
+            this.cmdPregledAktivista.Click += new System.EventHandler(this.cmdPregledAktivista_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdPregledAktivista);
+            this.Controls.Add(this.cmdLINQ2);
+            this.Controls.Add(this.cmdLINQ1);
+            this.Controls.Add(this.cmdLINQ);
+            this.Controls.Add(this.cmdTransakcija);
+            this.Controls.Add(this.cmdDelete);
+            this.Controls.Add(this.cmdUpdate);
             this.Controls.Add(this.cmdManyToMany);
             this.Controls.Add(this.cmdDodajMitingNaZatvorenom);
             this.Controls.Add(this.cmdGetSusreti);
@@ -251,6 +335,13 @@
         private System.Windows.Forms.Button cmdGetSusreti;
         private System.Windows.Forms.Button cmdDodajMitingNaZatvorenom;
         private System.Windows.Forms.Button cmdManyToMany;
+        private System.Windows.Forms.Button cmdUpdate;
+        private System.Windows.Forms.Button cmdDelete;
+        private System.Windows.Forms.Button cmdTransakcija;
+        private System.Windows.Forms.Button cmdLINQ;
+        private System.Windows.Forms.Button cmdLINQ1;
+        private System.Windows.Forms.Button cmdLINQ2;
+        private System.Windows.Forms.Button cmdPregledAktivista;
     }
 }
 

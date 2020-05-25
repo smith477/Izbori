@@ -429,5 +429,159 @@ namespace Izbori
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Aktivista_Stranke aktivista = session.Load<Aktivista_Stranke>(41);
+
+                aktivista.Ulica = "Branka Krsmanovica 11";
+
+
+                session.Update(aktivista);
+
+                session.Flush();
+                session.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Aktivista_Stranke aktivista = session.Load<Aktivista_Stranke>(85);
+
+                //brise se objekat iz baze ali ne i instanca objekta u memroiji
+                session.Delete(aktivista);
+                //s.Delete("from Odeljenje");
+
+                session.Flush();
+                session.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Aktivista_Stranke aktivista = session.Load<Aktivista_Stranke>(21);
+
+                ITransaction t = session.BeginTransaction();
+
+                session.Delete(aktivista);
+
+                //t.Commit();
+                t.Rollback();
+
+                session.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdLINQ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                IList<Koordinator_Opstine> koordinatori = (from o in session.Query<Koordinator_Opstine>()
+                                              where (o.Adresa_Kancelarije == "Nova Adresa")
+                                              select o).ToList<Koordinator_Opstine>();
+
+                foreach (Koordinator_Opstine k in koordinatori)
+                {
+                    MessageBox.Show(k.Licno_ime + " " + k.Prezime);
+                }
+
+
+                session.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdLINQ1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                IEnumerable<Lokacije> lokacije = from l in session.Query<Lokacije>()
+                                                  where (l.Id.Lokacija == "Centar" || l.Id.Lokacija == "Bulevar")
+                                                  orderby l.Id.Lokacija
+                                                  select l;
+
+                foreach (Lokacije l in lokacije)
+                {
+                    MessageBox.Show(l.Id.Deljenje_Letki.Grad);
+                }
+
+                session.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdLINQ2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                IEnumerable<Aktivista_Stranke> aktivisti = session.Query<Aktivista_Stranke>()
+                                                    .Where(l => (l.Licno_ime == "Marko" && l.PratiGlasackoMesto != null))
+                                                    .OrderBy(l => l.Prezime).ThenBy(l => l.Ime_roditelja)
+                                                    .Select(l => l);
+                                                    
+
+
+                foreach (Aktivista_Stranke a in aktivisti)
+                {
+                    MessageBox.Show(a.PratiGlasackoMesto.Naziv);
+                }
+
+                session.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdPregledAktivista_Click(object sender, EventArgs e)
+        {
+            Koordinator_Opstine_Informacije odInfoForm = new Koordinator_Opstine_Informacije(100);
+
+            odInfoForm.Show();
+        }
     }
-}
+    }
+
