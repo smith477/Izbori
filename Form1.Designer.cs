@@ -51,6 +51,11 @@
             this.cmdLINQ1 = new System.Windows.Forms.Button();
             this.cmdLINQ2 = new System.Windows.Forms.Button();
             this.cmdPregledAktivista = new System.Windows.Forms.Button();
+            this.btnScalar = new System.Windows.Forms.Button();
+            this.btnPaging = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeIzbora
@@ -283,11 +288,66 @@
             this.cmdPregledAktivista.UseVisualStyleBackColor = true;
             this.cmdPregledAktivista.Click += new System.EventHandler(this.cmdPregledAktivista_Click);
             // 
+            // btnScalar
+            // 
+            this.btnScalar.Location = new System.Drawing.Point(287, 276);
+            this.btnScalar.Name = "btnScalar";
+            this.btnScalar.Size = new System.Drawing.Size(267, 23);
+            this.btnScalar.TabIndex = 24;
+            this.btnScalar.Text = "Scalar";
+            this.btnScalar.UseVisualStyleBackColor = true;
+            this.btnScalar.Click += new System.EventHandler(this.btnScalar_Click_1);
+            // 
+            // btnPaging
+            // 
+            this.btnPaging.Location = new System.Drawing.Point(286, 305);
+            this.btnPaging.Name = "btnPaging";
+            this.btnPaging.Size = new System.Drawing.Size(267, 23);
+            this.btnPaging.TabIndex = 25;
+            this.btnPaging.Text = "Paging";
+            this.btnPaging.UseVisualStyleBackColor = true;
+            this.btnPaging.Click += new System.EventHandler(this.btnPaging_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(285, 338);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Criteria";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(285, 367);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(269, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "QueryOver";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(285, 396);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(269, 23);
+            this.button3.TabIndex = 28;
+            this.button3.Text = "NativSql";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPaging);
+            this.Controls.Add(this.btnScalar);
             this.Controls.Add(this.cmdPregledAktivista);
             this.Controls.Add(this.cmdLINQ2);
             this.Controls.Add(this.cmdLINQ1);
@@ -342,6 +402,11 @@
         private System.Windows.Forms.Button cmdLINQ1;
         private System.Windows.Forms.Button cmdLINQ2;
         private System.Windows.Forms.Button cmdPregledAktivista;
+        private System.Windows.Forms.Button btnScalar;
+        private System.Windows.Forms.Button btnPaging;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

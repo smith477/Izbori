@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NHibernate;
 using Izbori.Entities;
+using NHibernate.Criterion;
 
 namespace Izbori
 {
@@ -581,6 +582,140 @@ namespace Izbori
             Koordinator_Opstine_Informacije odInfoForm = new Koordinator_Opstine_Informacije(100);
 
             odInfoForm.Show();
+        }
+
+        private void btnScalar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("select count(o) sum(o.Broj_Biraca * (o.Procenat_Glasanja/100))," +
+                                        " from Rezultati o ");
+
+                //za slucaj da upit vraca visestruku vrednost
+                IList<object[]> result = q.List<object[]>();
+
+                foreach (object[] r in result)
+                {
+                    Int64 broj_glasova = (Int64)r[0];
+                    long broj = (long)r[1];
+
+                    MessageBox.Show(broj.ToString() + " " + broj_glasova.ToString());
+                }
+
+                s.Close();
+
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void btnPaging_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from Aktivista_Stranke");
+                q.SetFirstResult(3);
+                q.SetMaxResults(3);
+
+                IList<Aktivista_Stranke> odeljenja = q.List<Aktivista_Stranke>();
+
+                foreach (Aktivista_Stranke o in odeljenja)
+                {
+                    MessageBox.Show(o.Licno_ime.ToString());
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                ICriteria c = s.CreateCriteria<Susreti_Kandidata_Sa_Gradjanima>();
+
+                c.Add(Expression.Ge("Lokacija", "Nis"));
+                c.Add(Expression.Eq("Vreme", new DateTime(2020, 11, 22)));
+
+                IList<Susreti_Kandidata_Sa_Gradjanima> odeljenja = c.List<Susreti_Kandidata_Sa_Gradjanima>();
+
+                foreach (Susreti_Kandidata_Sa_Gradjanima o in odeljenja)
+                {
+                    MessageBox.Show(o.Lokacija);
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IList<Aktivista_Stranke> odeljenja = s.QueryOver<Aktivista_Stranke>()
+                                                .Where(x => x.Ulica == "Romanijska")
+                                                .Where(x => x.Ime_roditelja == "Miodrag")
+                                                .List<Aktivista_Stranke>();
+
+                foreach (Aktivista_Stranke o in odeljenja)
+                {
+                    MessageBox.Show(o.Id.ToString());
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                ISQLQuery q = s.CreateSQLQuery("SELECT O.* FROM GOST O");
+                q.AddEntity(typeof(Gost));
+
+
+                IList<Gost> gost = q.List<Gost>();
+
+                foreach (Gost o in gost)
+                {
+                    MessageBox.Show(o.Licno_Ime);
+                }
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
         }
     }
     }
